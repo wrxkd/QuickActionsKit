@@ -7,7 +7,9 @@
 
 import UIKit
 
-struct QuickActionsItem<T> where T: RawRepresentable, T.RawValue == String {
+protocol QuickActionType: RawRepresentable where RawValue == String {}
+
+struct QuickActionsItem<T> where T: QuickActionType {
     // MARK: Properties
     public let type: T
 
