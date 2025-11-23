@@ -7,6 +7,17 @@
 
 import UIKit
 
+/// The protocol defining the quick actions list and actions for your application.
+/// 
+/// ```swift
+/// enum MyQuickActionsType: String, QuickActionsType {
+///     // …
+/// }
+///
+/// final class MyQuickActions: QuickActions<MyQuickActionsType> {
+///     // …
+/// }
+/// ```
 public protocol QuickActions {
     associatedtype T: QuickActionType
 
@@ -14,5 +25,5 @@ public protocol QuickActions {
     var actions: Set<QuickActionsItem<T>> { get }
 
     /// The method to be called once a quick action item has been tapped.
-    func performAction(for type: T, with userInfo: [String:NSSecureCoding]?) -> Bool
+    func perform(for type: T, with userInfo: [String:NSSecureCoding]?) -> Bool
 }

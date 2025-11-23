@@ -8,6 +8,7 @@
 import UIKit
 
 enum QuickActionsMapper {
+    // MARK: Methods
     /// Map a `QuickActionItem` object into a `UIApplicationShortcutItem`.
     static func map<T>(
         from item: QuickActionsItem<T>
@@ -23,6 +24,7 @@ enum QuickActionsMapper {
         )
     }
 
+    // MARK: Private Methods
     /// Map a `QuickActionsItem.Icon` object into a `UIApplicationShortcutIcon`.
     ///
     /// - Returns: `nil` if the provided `icon` is also nil.
