@@ -1,32 +1,42 @@
 @Tutorial(time: 10) {
-    @Intro(title: "Defining your QuickActions") {
-        Learn how to configure the QuickActionsKit library to enhance your application's shortcuts.
+    @Intro(title: "Defining Your Quick Actions") {
+        Learn how to configure QuickActionsKit to add dynamic Home Screen shortcuts to your application.
+        
+        With QuickActionsKit, you can create contextual shortcuts that appear when users long-press your app icon, providing quick access to key features and improving the overall user experience.
     }
-
-    @Section(title: "Define your application's Quick Actions") {
-        We'll first start by defining all the possible Quick Actions that your application is gonna 
+    
+    @Section(title: "Create Your Quick Actions Configuration") {
+        Start by defining the quick actions your application will support and how they should behave based on your app's state.
         
         @Steps {
             @Step {
-                First, start by creating an enum corresponding to your quick actions. This enum must conform to `String` and `QuickActionType`.
+                Create an enum that represents all possible quick actions in your app. This enum must conform to both `String` and `QuickActionType` to provide type-safe action identifiers.
+                
+                Each case represents a unique shortcut that will appear on the Home Screen.
                 
                 @Code(name: "MyQuickActions.swift", file: Step1.swift)
             }
             
             @Step {
-                Create a class conforming to `QuickActionsManager`, and define the `actions` property, that contains all your actions.
+                Create a manager class conforming to `QuickActionsManager` and define the `actions` property.
+                
+                This property returns an array of all available quick actions with their display properties like title, subtitle, and icon.
                 
                 @Code(name: "MyQuickActions.swift", file: Step2.swift)
             }
-                        
+            
             @Step {
-                Specify actions availability. You can restrict visibility depending on the user authentication, current date etc.
+                Make actions contextual by specifying their availability conditions.
+                
+                You can dynamically show or hide actions based on user authentication status, feature availability, time of day, or any other app state. This ensures users only see relevant shortcuts.
                 
                 @Code(name: "MyQuickActions.swift", file: Step3.swift)
             }
             
             @Step {
-                Create the `perform` method, that'll be called with the corresponding type and user information.
+                Implement the `perform` method to handle action selection.
+                
+                This method is called when a user taps a quick action from the Home Screen. Use the action type to navigate to the appropriate screen or trigger the corresponding feature.
                 
                 @Code(name: "MyQuickActions.swift", file: Step4.swift)
             }

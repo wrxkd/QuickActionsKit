@@ -1,12 +1,12 @@
-# ``QuickActionsKit``
+![Cover](./Sources/QuickActionsKit/QuickActionsKit.docc/Resources/Cover.png)
+
+# QuickActionsKit
 
 A lightweight Swift library for configuring and handling Home Screen Quick Actions with minimal setup.
 
 ## Overview
 
 QuickActionsKit simplifies the implementation of 3D Touch and long-press shortcuts on your app's Home Screen icon. Whether you're building with SwiftUI or UIKit, QuickActionsKit provides a clean, declarative API to define dynamic quick actions that respond to your application's state.
-
-![Cover](Cover.png)
 
 ### Key Features
 
@@ -15,19 +15,10 @@ QuickActionsKit simplifies the implementation of 3D Touch and long-press shortcu
 - **Type-safe**: Leverage Swift's type system to prevent runtime errors
 - **Lightweight**: Minimal overhead with a focused API surface
 
-## Topics
+### Documentation
 
-### Getting Started
+You can find the full documentation and usage examples on the [QuickActionsKit Documentation](https://mlbonniec.github.io/QuickActionsKit/).
 
-- <doc:Setup>
-
-### Essentials
-
-- ``QuickActionsManager``
-- ``QuickActionsItem``
-- ``QuickActions``
-
-### Integration Guides
-
-- <doc:Setup-QuickActions-for-SwiftUI>
-- <doc:Setup-QuickActions-for-UIKit>
+#### Tutorials
+- [Learn how to setup QuickActions for your application.
+](https://mlbonniec.github.io/QuickActionsKit/tutorials/setup)
