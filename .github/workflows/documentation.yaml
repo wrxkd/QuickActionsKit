@@ -38,7 +38,6 @@ jobs:
             --hosting-base-path QuickActionsKit \
             --output-path docs;
 
-          echo "<script>window.location.href += \"/documentation/quickactionskit\"</script>" > docs/index.html;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
