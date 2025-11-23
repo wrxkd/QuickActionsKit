@@ -1,0 +1,48 @@
+name: Documentation
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "Sources/**/*.swift"
+      - ".github/workflows/documentation.yaml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: macos-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build DocC
+        run: |
+          xcodebuild docbuild -scheme QuickActionsKit \
+            -derivedDataPath /tmp/docbuild \
+            -destination 'generic/platform=iOS';
+
+          $(xcrun --find docc) process-archive \
+            transform-for-static-hosting /tmp/docbuild/Build/Products/Debug-iphoneos/QuickActionsKit.doccarchive \
+            --hosting-base-path QuickActionsKit \
+            --output-path docs;
+
+          echo "<script>window.location.href += \"/documentation/quickactionskit\"</script>" > docs/index.html;
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: 'docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
