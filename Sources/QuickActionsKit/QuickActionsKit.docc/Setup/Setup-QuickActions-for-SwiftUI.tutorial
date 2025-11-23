@@ -1,0 +1,5 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Setup QuickActions for SwiftUI") {
+        Learn how to configure the QuickActionsKit library to enhance your application's shortcuts.
+    }
+}

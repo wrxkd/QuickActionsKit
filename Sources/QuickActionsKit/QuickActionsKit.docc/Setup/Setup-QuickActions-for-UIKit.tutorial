@@ -1,0 +1,5 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Setup QuickActions for UIKit") {
+        Learn how to configure the QuickActionsKit library to enhance your application's shortcuts.
+    }
+}

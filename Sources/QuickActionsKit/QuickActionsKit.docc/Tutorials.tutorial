@@ -1,0 +1,21 @@
+@Tutorials(name: "QuickActionsKit Tutorials") {
+    @Intro(title: "Learn how to setup QuickActions for your application.") {
+        Add engaging introduction text here.
+        
+        @Image(source: Cover, alt: "Cover")
+    }
+    
+
+    @Chapter(name: "Configuration") {
+        @TutorialReference(tutorial: "doc:Defining-Your-QuickActions")
+        
+        @Image(source: Cover, alt: "Cover")
+    }
+    
+    @Chapter(name: "Setup") {
+        @TutorialReference(tutorial: "doc:Setup-QuickActions-for-SwiftUI")
+        @TutorialReference(tutorial: "doc:Setup-QuickActions-for-UIKit")
+        
+        @Image(source: Cover, alt: "Cover")
+    }
+}

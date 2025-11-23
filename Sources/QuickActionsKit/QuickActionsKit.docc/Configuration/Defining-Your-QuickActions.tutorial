@@ -1,0 +1,35 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Defining your QuickActions") {
+        Learn how to configure the QuickActionsKit library to enhance your application's shortcuts.
+    }
+
+    @Section(title: "Define your application's Quick Actions") {
+        We'll first start by defining all the possible Quick Actions that your application is gonna 
+        
+        @Steps {
+            @Step {
+                First, start by creating an enum corresponding to your quick actions. This enum must conform to `String` and `QuickActionType`.
+                
+                @Code(name: "MyQuickActions.swift", file: Step1.swift)
+            }
+            
+            @Step {
+                Create a class conforming to `QuickActionsManager`, and define the `actions` property, that contains all your actions.
+                
+                @Code(name: "MyQuickActions.swift", file: Step2.swift)
+            }
+                        
+            @Step {
+                Specify actions availability. You can restrict visibility depending on the user authentication, current date etc.
+                
+                @Code(name: "MyQuickActions.swift", file: Step3.swift)
+            }
+            
+            @Step {
+                Create the `perform` method, that'll be called with the corresponding type and user information.
+                
+                @Code(name: "MyQuickActions.swift", file: Step4.swift)
+            }
+        }
+    }
+}
