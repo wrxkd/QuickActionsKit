@@ -5,6 +5,7 @@ on:
     paths:
       - "Package.swift"
       - "Sources/**/*.swift"
+      - "Sources/**/*.docc/**"
       - ".github/workflows/documentation.yaml"
 
 permissions:
