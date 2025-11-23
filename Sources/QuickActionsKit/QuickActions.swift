@@ -5,17 +5,14 @@
 //  Created by Mathis Le Bonniec on 11/22/25.
 //
 
-import Foundation
+import UIKit
 
 public protocol QuickActions {
     associatedtype T: QuickActionType
 
     /// The list of dynamic actions.
-    func getDynamicActions() -> Set<QuickActionsItem<T>>
+    var actions: Set<QuickActionsItem<T>> { get }
 
-    /// The list of actions required.
-    func getDefaultActions() -> Set<QuickActionsItem<T>>
-
-    /// The list of actions to show when the dynamic actions are all hidden.
-    func getEmptyActions() -> Set<QuickActionsItem<T>>
+    /// The method to be called once a quick action item has been tapped.
+    func performAction(for type: T, with userInfo: [String:NSSecureCoding]?) -> Bool
 }
