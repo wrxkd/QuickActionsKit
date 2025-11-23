@@ -3,6 +3,7 @@ on:
   push:
     branches: ["main"]
     paths:
+      - "Package.swift"
       - "Sources/**/*.swift"
       - ".github/workflows/documentation.yaml"
 
