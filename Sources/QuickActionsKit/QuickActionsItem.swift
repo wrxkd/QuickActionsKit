@@ -43,6 +43,10 @@ public struct QuickActionsItem<T>: Hashable where T: QuickActionType {
         self.icon = icon
         self.availability = availability
     }
+
+    static public func == (lhs: QuickActionsItem, rhs: QuickActionsItem) -> Bool {
+        lhs.type == rhs.type
+    }
 }
 
 extension QuickActionsItem {
