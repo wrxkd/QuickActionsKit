@@ -66,7 +66,7 @@ public protocol QuickActionType: Sendable, RawRepresentable, Hashable where RawV
 ///     title: "New Note",
 ///     subtitle: "Create a blank note",
 ///     icon: .systemName("square.and.pencil"),
-///     availability: true
+///     availability: { true }
 /// )
 /// ```
 ///

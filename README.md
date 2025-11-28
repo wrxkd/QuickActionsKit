@@ -39,7 +39,9 @@ class MyQuickActions: QuickActions {
                 title: "Edit",
                 subtitle: nil,
                 icon: nil,
-                availability: MyApplicationSingleton.current.isUserLogged
+                availability: {
+                    MyApplicationSingleton.current.isUserLogged
+                }
             )
         ]
     }
